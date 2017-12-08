@@ -1,6 +1,6 @@
 import React from 'react';
-import Participants from './Participants.jsx';
-import Conversation from './Conversation.jsx';
+import Participants from './Participants';
+import Conversation from './Conversation';
 
 const ChatPane = (props) => (
     <div className="pane-group">

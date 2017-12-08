@@ -8,6 +8,9 @@ module.exports = {
         path: join(__dirname, "app/build"),
         filename: "renderer.js"
     },
+    resolve: {
+        extensions: ['.js', '.jsx']
+    },
     module: {
         rules: [
             {
@@ -26,13 +29,13 @@ module.exports = {
                 use: ["style-loader", "css-loader"]
             },
             {
-                test: /\.(eot|svg|ttf|woff|woff2)(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
-                use: [{ 
-                    loader: "file-loader", 
-                    options: { 
-                      publicPath: "./build/" 
-                    } 
-                }] 
+                test: /\.(eot|svg|ttf|woff|woff2)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                use: [{
+                    loader: "file-loader",
+                    options: {
+                        publicPath: "./build/"
+                    }
+                }]
             }
         ]
     }
