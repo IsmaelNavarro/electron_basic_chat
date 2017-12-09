@@ -5,7 +5,7 @@ export default class Server {
 
     constructor() {
         this.participants = new Map();
-
+        
         this.server = ws.createServer((conn) => {
             conn.on('text', (text) => {
                 const msg = Message.fromString(text),

@@ -39,10 +39,6 @@ export default class Client extends EventEmitter {
         this.emit('text', data);
     }
 
-    getParticipants() {
-        return this.participants;
-    }
-
     join(userName) {
         this.userName = userName;
         this.send('join', userName);

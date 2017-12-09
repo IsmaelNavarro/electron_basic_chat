@@ -8,11 +8,13 @@
     "build": "webpack"
   },
   "dependencies": {
+    "babel-preset-stage-2": "^6.24.1",
     "nodejs-websocket": "^1.7.1",
     "photonkit": "^0.1.2",
     "prop-types": "^15.5.7",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-timeago": "^3.4.3"
   },
   "devDependencies": {
     "babel-core": "^6.22.1",

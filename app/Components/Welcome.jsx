@@ -19,7 +19,7 @@ export default class Welcome extends React.Component {
     render() {
         return (
             <div className="pane padded-more">
-                <form>
+                <form onSubmit={this.onSubmit}>
                     <div className="form-group">
                         <label>Tell me your name</label>
                         <input 
