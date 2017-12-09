@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Participants matches previously saved snapshot 1`] = `
+<div
+  className="pane pane-sm sidebar"
+>
+  <ul
+    className="list-group"
+  >
+    <li
+      className="list-group-item"
+    >
+      <div
+        className="media-body"
+      >
+        <strong>
+          <span
+            className="icon icon-user"
+          />
+           
+          Jon
+        </strong>
+        <p>
+          Joined 
+          <time
+            dateTime="2012-03-12T04:05:05.005Z"
+            title="2012-03-12 04:05"
+          >
+            6 years ago
+          </time>
+           
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>
+`;

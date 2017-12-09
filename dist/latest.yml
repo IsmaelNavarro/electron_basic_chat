@@ -1,0 +1,8 @@
+version: 1.0.0
+files:
+  - url: chat-setup-1.0.0.exe
+    sha512: KsajTvQNsSFIiNzwtYcggc356zYesBKtkDoO+s85bendd6pElowSa929yX8IiyKJCn/b3Oo3pv294s1shSC9Yw==
+path: chat-setup-1.0.0.exe
+sha512: KsajTvQNsSFIiNzwtYcggc356zYesBKtkDoO+s85bendd6pElowSa929yX8IiyKJCn/b3Oo3pv294s1shSC9Yw==
+sha2: b6db13528d4d67c667ff8b9dae9f5b57f757693a4df31553992a64fd8985b807
+releaseDate: '2017-12-09T23:34:56.335Z'

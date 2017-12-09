@@ -18,10 +18,10 @@ export default class Participant extends React.Component {
             participants: []
         };
 
-        props.client.on('participants', this.onClienteParticipants);
+        props.client.on('participants', this.onClientParticipants);
     }
 
-    onClienteParticipants = (participants) => {
+    onClientParticipants = (participants) => {
         this.setState({
             participants: participants
         });

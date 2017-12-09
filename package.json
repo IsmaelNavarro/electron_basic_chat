@@ -1,34 +1,53 @@
 {
   "name": "chat",
+  "author": "Ismael Navarro",
+  "description": "Simple chat with electron",
   "version": "1.0.0",
   "main": "./app/main.js",
+  "build": {
+    "appId": "com.example.chat"
+  },
   "scripts": {
     "start": "electron .",
     "dev": "webpack -d --watch",
-    "build": "webpack"
+    "build": "webpack",
+    "test": "jest",
+    "dist": "build"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/app"
+    ]
   },
   "dependencies": {
     "babel-preset-stage-2": "^6.24.1",
     "nodejs-websocket": "^1.7.1",
     "photonkit": "^0.1.2",
     "prop-types": "^15.5.7",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "react-timeago": "^3.4.3"
   },
   "devDependencies": {
     "babel-core": "^6.22.1",
-    "babel-loader": "^6.2.10",
+    "babel-jest": "^21.2.0",
+    "babel-loader": "^7.1.2",
     "babel-plugin-transform-class-properties": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-es2017": "^6.22.0",
     "babel-preset-react": "^6.22.0",
     "css-loader": "^0.28.7",
     "devtron": "^1.4.0",
     "electron": "^1.6.2",
+    "electron-builder": "^19.48.3",
     "electron-debug": "^1.1.0",
     "electron-devtools-installer": "^2.2.1",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
     "file-loader": "^1.1.5",
+    "jest": "^21.2.1",
+    "react-test-renderer": "^16.2.0",
     "style-loader": "^0.19.0",
-    "webpack": "^2.2.1"
+    "webpack": "^3.10.0"
   }
 }
