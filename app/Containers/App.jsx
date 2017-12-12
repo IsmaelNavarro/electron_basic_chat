@@ -7,8 +7,9 @@ import ChatPane from '../Components/ChatPane';
 
 import Server from '../Service/Server';
 import Client from '../Service/Client';
+import ip from 'ip';
 
-const HOST = "127.0.0.1",
+const HOST = ip.address(),
     PORT = 8001;
 
 export default class App extends React.Component {
@@ -16,17 +17,30 @@ export default class App extends React.Component {
     constructor() {
         super();
         this.client = new Client();
-        this.server = new Server();
-        this.server.connect(HOST, PORT, this.client);
 
         this.state = {
             name: ''
         };
     }
 
-    onNameChange = (userName) => {
+    updateUserName = (userName) => {
         this.setState({ name: userName });
-        this.client.join(userName);
+    }
+
+    startAsHost = (userName) => {
+        this.server = new Server();
+        this.server.connect(HOST, PORT, this.client, userName);
+    }
+
+    startAsClient = (userName, host) => {
+        this.client
+            .connect(host, PORT)
+            .then(() => {
+                this.client.join(userName);
+            })
+            .catch(() => {
+                console.error("Client's error");
+            });
     }
 
     render() {
@@ -35,9 +49,12 @@ export default class App extends React.Component {
                 <Header />
                 <div className="window-content">
                     {
-                        this.state.name 
-                        ? <ChatPane client={this.client} /> 
-                        : <Welcome onNameChange={this.onNameChange} />
+                        this.state.name
+                            ? <ChatPane client={this.client} />
+                            : <Welcome
+                                startAsHost={this.startAsHost}
+                                startAsClient={this.startAsClient}
+                                updateUserName={this.updateUserName} />
                     }
                 </div>
                 <Footer />

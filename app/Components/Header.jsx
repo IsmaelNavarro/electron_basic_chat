@@ -1,5 +1,6 @@
 import React from 'react';
 import { remote } from 'electron';
+import ip from 'ip';
 
 const win = remote.getCurrentWindow();
 
@@ -16,7 +17,7 @@ export default class Header extends React.Component {
         win.on('maximize', this.updateState);
         win.on('unmaximize', this.updateState);
     }
-    
+
     updateState = () => {
         this.setState({
             isMaximized: win.isMaximized()
@@ -40,6 +41,7 @@ export default class Header extends React.Component {
 
         return (
             <header className="toolbar toolbar-header">
+                <h1 className="title">Local Chat ({ip.address()})</h1>
                 <div className="toolbar-actions">
                     <button
                         className="btn btn-default pull-right"

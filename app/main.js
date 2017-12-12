@@ -1,8 +1,9 @@
 const { app, BrowserWindow } = require('electron'),
     path = require('path'),
-    url = require('url');
+    url = require('url'),
+    ip = require('ip');
+    
 //const { default: installExtension, REACT_DEVELOPER_TOOLS } = require("electron-devtools-installer");
-
 
 let mainWindow;
 
@@ -12,7 +13,7 @@ const createWindow = () => {
     //    .catch((err) => console.log("An error occurred: ", err));
 
     mainWindow = new BrowserWindow({
-        width: 1000, 
+        width: 1000,
         height: 600,
         frame: false,
         icon: path.join(__dirname, 'icon-64x64.png')
@@ -43,4 +44,5 @@ app.on('activate', () => {
     }
 });
 
-//require('electron-debug')(); 
+if (process.env.NODE_ENV === 'development')
+    require('electron-debug')(); 

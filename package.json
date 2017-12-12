@@ -8,7 +8,7 @@
     "appId": "com.example.chat"
   },
   "scripts": {
-    "start": "electron .",
+    "start": "set NODE_ENV=development&& electron .",
     "dev": "webpack -d --watch",
     "build": "webpack",
     "test": "jest",
@@ -20,6 +20,7 @@
     ]
   },
   "dependencies": {
+    "ip": "^1.1.5",
     "nodejs-websocket": "^1.7.1",
     "photonkit": "^0.1.2",
     "prop-types": "^15.5.7",

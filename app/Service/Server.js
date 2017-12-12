@@ -5,7 +5,7 @@ export default class Server {
 
     constructor() {
         this.participants = new Map();
-        
+
         this.server = ws.createServer((conn) => {
             conn.on('text', (text) => {
                 const msg = Message.fromString(text),
@@ -51,13 +51,18 @@ export default class Server {
         });
     }
 
-    connect(host, port, client) {
+    connect(host, port, client, userName) {
         client.connect(host, port).catch(() => {
             this.server.listen(port, host, () => {
                 console.info("Server is ready");
-                client.connect(host, port).catch(() => {
-                    console.error("Client's error");
-                });
+                client
+                    .connect(host, port)
+                    .then(() => {
+                        client.join(userName);
+                    })
+                    .catch(() => {
+                        console.error("Client's error");
+                    });
             });
         });
     }
